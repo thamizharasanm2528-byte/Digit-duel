@@ -1,35 +1,7 @@
 import { useLocation } from "wouter";
-import { useState } from "react";
 
 export default function Home() {
   const [, navigate] = useLocation();
-  const [downloading, setDownloading] = useState(false);
-
-  async function handleDownload() {
-    setDownloading(true);
-    try {
-      // Hit the backend endpoint — it streams back a ZIP file
-      const res = await fetch("/api/download-zip");
-      if (!res.ok) throw new Error("Server error");
-
-      // Read the ZIP bytes and turn them into a blob
-      const blob = await res.blob();
-
-      // Create a temporary <a> element, click it, then clean up
-      const url  = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href     = url;
-      link.download = "four-digit-battle-project.zip";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch {
-      alert("Download failed. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-8">
@@ -68,21 +40,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Download Project button */}
-        <button
-          onClick={handleDownload}
-          disabled={downloading}
-          className="w-full rounded-2xl p-3 flex items-center justify-center gap-2.5 transition-all duration-200 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            border: "1px solid rgba(255,255,255,0.12)",
-          }}
-        >
-          <span className="text-lg">{downloading ? "⏳" : "📦"}</span>
-          <span className="text-sm font-semibold text-white/70">
-            {downloading ? "Preparing ZIP…" : "Download Project"}
-          </span>
-        </button>
 
         {/* Mode selection */}
         <div className="space-y-3">
