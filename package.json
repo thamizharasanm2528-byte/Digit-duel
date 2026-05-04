@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm -r --if-present run build",
-    "start": "pnpm --filter @workspace/api-server run start",
+    "build": "cd artifacts/api-server && node ./build.mjs && cd ../../artifacts/four-digit-battle && npx vite build --config vite.config.ts",
+    "start": "node artifacts/api-server/dist/index.mjs",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
