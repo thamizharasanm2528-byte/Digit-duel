@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "4 Digit Battle"
+version = "1.0.0"
+id = "artifacts/four-digit-battle"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25017
+
+[services.development]
+run = "pnpm --filter @workspace/four-digit-battle run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/four-digit-battle", "run", "build" ]
+publicDir = "artifacts/four-digit-battle/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25017"
+BASE_PATH = "/"
