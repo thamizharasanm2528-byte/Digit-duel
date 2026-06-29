@@ -33,13 +33,13 @@ export default function LocalHotspot() {
 
   function handleCreate() {
     connectSocket();
-    actions.createRoom();
+    actions.createRoom("Host", 4);
   }
 
   function handleJoin() {
     if (joinCode.trim().length < 4) return;
     connectSocket();
-    actions.joinRoom(joinCode);
+    actions.joinRoom(joinCode, "Guest");
   }
 
   // Current app URL (what the friend should open)
