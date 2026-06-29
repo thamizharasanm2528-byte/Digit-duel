@@ -17,8 +17,8 @@ interface GameProps {
 }
 
 const P = {
-  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "#0284c7", glow: "rgba(2,132,199,0.2)"  },
-  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "#7c3aed", glow: "rgba(124,58,237,0.2)" },
+  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "var(--p1)", glow: "var(--p1-glow)"  },
+  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "var(--p2)", glow: "var(--p2-glow)" },
 };
 
 function getCrackedPositions(history: GuessResult[]): (string | null)[] {
@@ -119,8 +119,7 @@ export default function Game({ p1Secret, p2Secret, p1Name, p2Name, codeLength, o
         </div>
 
         {timesUp && (
-          <div className="rounded-xl px-4 py-3 text-center font-bold text-sm"
-            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
+          <div className="rounded-xl px-4 py-3 text-center font-bold text-sm bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400">
             ⏰ Time's up! Switching turns…
           </div>
         )}
@@ -223,9 +222,9 @@ function CrackedProgress({ crackedPositions, player, codeLength }: {
               style={digit ? {
                 background: dim, border: `2px solid ${neon}`, color: neon, boxShadow: `0 0 16px ${glow}`,
               } : {
-                background: "rgba(15,23,42,0.03)",
-                border: "2px solid rgba(15,23,42,0.06)",
-                color: "rgba(15,23,42,0.25)",
+                background: "var(--empty-box-bg)",
+                border: "2px solid var(--empty-box-border)",
+                color: "var(--empty-box-text)",
               }}>
               {digit ?? "·"}
             </div>
@@ -257,8 +256,8 @@ function DigitColorBox({ digit, color }: { digit: string; color: DigitColor }) {
   return (
     <div className="w-9 h-9 rounded-lg flex items-center justify-center font-mono text-sm font-black transition-all"
       style={found
-        ? { background: "rgba(22,163,74,0.12)", border: "1.5px solid rgba(22,163,74,0.4)", color: "#16a34a", boxShadow: "0 2px 8px rgba(22,163,74,0.1)" }
-        : { background: "rgba(15,23,42,0.03)", border: "1.5px solid rgba(15,23,42,0.08)", color: "rgba(15,23,42,0.5)" }
+        ? { background: "var(--digit-box-found-bg)", border: "1.5px solid var(--digit-box-found-border)", color: "var(--digit-box-found-text)" }
+        : { background: "var(--digit-box-empty-bg)", border: "1.5px solid var(--digit-box-empty-border)", color: "var(--digit-box-empty-text)" }
       }>
       {digit}
     </div>

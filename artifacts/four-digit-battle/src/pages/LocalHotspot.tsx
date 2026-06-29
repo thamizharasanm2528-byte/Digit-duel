@@ -60,8 +60,7 @@ export default function LocalHotspot() {
 
         {/* Error */}
         {state.error && (
-          <div className="rounded-xl px-4 py-3 text-sm font-medium"
-            style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#f87171" }}>
+          <div className="rounded-xl px-4 py-3 text-sm font-medium bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400">
             {state.error}
           </div>
         )}
@@ -181,7 +180,7 @@ function Step({ n, text }: { n: number; text: string }) {
   return (
     <div className="flex gap-3">
       <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-black shrink-0 mt-0.5"
-        style={{ background: "rgba(2,132,199,0.06)", color: "#0284c7", border: "1px solid rgba(2,132,199,0.25)" }}>
+        style={{ background: "var(--p1-dim)", color: "var(--p1)", border: "1px solid var(--p1-border)" }}>
         {n}
       </span>
       <span>{text}</span>

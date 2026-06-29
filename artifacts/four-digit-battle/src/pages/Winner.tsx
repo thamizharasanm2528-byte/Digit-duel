@@ -10,8 +10,8 @@ interface WinnerProps {
 }
 
 const W = {
-  1: { glow: "rgba(2,132,199,0.2)",   card: "p1-card", badge: "p1-badge" },
-  2: { glow: "rgba(124,58,237,0.2)", card: "p2-card", badge: "p2-badge" },
+  1: { glow: "var(--p1-glow)", card: "p1-card", badge: "p1-badge" },
+  2: { glow: "var(--p2-glow)", card: "p2-card", badge: "p2-badge" },
 };
 
 export default function Winner({ winner, p1Secret, p2Secret, p1Name, p2Name, onRestart }: WinnerProps) {
@@ -30,7 +30,7 @@ export default function Winner({ winner, p1Secret, p2Secret, p1Name, p2Name, onR
 
         <div className="flex justify-center">
           <div className="w-28 h-28 rounded-3xl flex items-center justify-center text-6xl select-none glow-gold"
-            style={{ background: "rgba(217,119,6,0.05)", border: "1px solid rgba(217,119,6,0.2)" }}>
+            style={{ background: "var(--gold-dim)", border: "1px solid var(--gold-border)" }}>
             🏆
           </div>
         </div>
@@ -77,7 +77,7 @@ function SecretRow({ name, secret, isWinner, card, badge }: {
         <span className="text-sm text-white/70 font-medium">{name}</span>
         {isWinner && (
           <span className="text-xs px-2 py-0.5 rounded-full font-bold"
-            style={{ background: "rgba(217,119,6,0.1)", color: "#d97706", border: "1px solid rgba(217,119,6,0.2)" }}>
+            style={{ background: "var(--gold-dim)", color: "var(--gold)", border: "1px solid var(--gold-border)" }}>
             👑 Winner
           </span>
         )}

@@ -76,6 +76,19 @@
   --gold-dim: rgba(217, 119, 6, 0.04);
   --gold-border: rgba(217, 119, 6, 0.2);
   --gold-glow: rgba(217, 119, 6, 0.06);
+
+  /* Empty slot indicators */
+  --empty-box-bg: rgba(19, 30, 25, 0.03);
+  --empty-box-border: rgba(19, 30, 25, 0.06);
+  --empty-box-text: rgba(19, 30, 25, 0.25);
+
+  /* DigitColorBox colors */
+  --digit-box-found-bg: rgba(0, 107, 44, 0.08);
+  --digit-box-found-border: rgba(0, 107, 44, 0.25);
+  --digit-box-found-text: #006B2C;
+  --digit-box-empty-bg: rgba(19, 30, 25, 0.03);
+  --digit-box-empty-border: rgba(19, 30, 25, 0.08);
+  --digit-box-empty-text: rgba(19, 30, 25, 0.5);
 }
 
 .dark {
@@ -117,6 +130,19 @@
   --gold-dim: rgba(251, 191, 36, 0.06);
   --gold-border: rgba(251, 191, 36, 0.25);
   --gold-glow: rgba(251, 191, 36, 0.12);
+
+  /* Empty slot indicators */
+  --empty-box-bg: rgba(236, 253, 245, 0.04);
+  --empty-box-border: rgba(236, 253, 245, 0.08);
+  --empty-box-text: rgba(236, 253, 245, 0.3);
+
+  /* DigitColorBox colors */
+  --digit-box-found-bg: rgba(34, 197, 94, 0.12);
+  --digit-box-found-border: rgba(34, 197, 94, 0.4);
+  --digit-box-found-text: #22C55E;
+  --digit-box-empty-bg: rgba(236, 253, 245, 0.04);
+  --digit-box-empty-border: rgba(236, 253, 245, 0.1);
+  --digit-box-empty-text: rgba(236, 253, 245, 0.5);
 }
 
 /* ── Global body — gradient background ───────────────────────────────────── */

@@ -22,7 +22,7 @@ export default function OnlineWinner() {
         <div className="flex justify-center">
           <div
             className={`w-28 h-28 rounded-3xl flex items-center justify-center text-6xl select-none ${iWon ? "glow-gold" : "glass"}`}
-            style={iWon ? { background: "rgba(217,119,6,0.05)", border: "1px solid rgba(217,119,6,0.2)" } : undefined}>
+            style={iWon ? { background: "var(--gold-dim)", border: "1px solid var(--gold-border)" } : undefined}>
             {iWon ? "🏆" : "😔"}
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function OnlineWinner() {
             {iWon ? "You cracked the code!" : "Better luck next time!"}
           </p>
           <h1 className="text-5xl font-black tracking-tight text-white"
-            style={{ textShadow: iWon ? "0 2px 12px rgba(217,119,6,0.2)" : "none" }}>
+            style={{ textShadow: iWon ? "0 2px 12px var(--gold-glow)" : "none" }}>
             {iWon ? "You Win!" : `${winnerName} Wins!`}
           </h1>
           <p className="text-white/40 text-sm">

@@ -40,8 +40,7 @@ export default function Lobby() {
         </div>
 
         {state.error && (
-          <div className="rounded-xl px-4 py-3 text-sm font-medium flex items-start gap-2"
-            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
+          <div className="rounded-xl px-4 py-3 text-sm font-medium flex items-start gap-2 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400">
             <span className="shrink-0">⚠️</span>
             <span>{state.error}</span>
           </div>

@@ -106,7 +106,7 @@ function ModeCard({ icon, title, subtitle, onClick, color }: {
       </div>
       <div className="flex-1">
         <p className="font-bold text-white text-sm">{title}</p>
-        <p className="text-xs mt-0.5" style={{ color: "rgba(15, 23, 42, 0.5)" }}>{subtitle}</p>
+        <p className="text-xs mt-0.5 text-white/50">{subtitle}</p>
       </div>
       <span className="text-lg shrink-0" style={{ color: s.text }}>›</span>
     </button>

@@ -9,8 +9,8 @@ import { playTick, playBuzzer, playWin } from "@/lib/sounds";
 const TURN_SECONDS = 60;
 
 const P_STYLES = {
-  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "#0284c7" },
-  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "#7c3aed" },
+  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "var(--p1)" },
+  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "var(--p2)" },
 };
 
 function getCrackedPositions(history: OnlineGuessEntry[], playerNum: 1 | 2): (string | null)[] {
@@ -108,8 +108,7 @@ export default function OnlineGame() {
         </div>
 
         {skipping && (
-          <div className="rounded-xl px-4 py-3 text-center font-bold text-sm"
-            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
+          <div className="rounded-xl px-4 py-3 text-center font-bold text-sm bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400">
             ⏰ Time's up! Passing turn…
           </div>
         )}
@@ -190,9 +189,9 @@ function CrackedProgress({ crackedPositions, player, codeLength }: {
               style={digit ? {
                 background: dim, border: `2px solid ${neon}`, color: neon, boxShadow: `0 0 12px ${glow}`,
               } : {
-                background: "rgba(15,23,42,0.03)",
-                border: "2px solid rgba(15,23,42,0.06)",
-                color: "rgba(15,23,42,0.25)",
+                background: "var(--empty-box-bg)",
+                border: "2px solid var(--empty-box-border)",
+                color: "var(--empty-box-text)",
               }}>
               {digit ?? "·"}
             </div>
@@ -238,8 +237,8 @@ function DigitColorBox({ digit, color }: { digit: string; color: DigitColor }) {
   return (
     <div className="w-6 h-6 rounded-md flex items-center justify-center font-mono text-xs font-black transition-all"
       style={found
-        ? { background: "rgba(22,163,74,0.12)", border: "1.5px solid rgba(22,163,74,0.4)", color: "#16a34a" }
-        : { background: "rgba(15,23,42,0.03)", border: "1.5px solid rgba(15,23,42,0.08)", color: "rgba(15,23,42,0.5)" }
+        ? { background: "var(--digit-box-found-bg)", border: "1.5px solid var(--digit-box-found-border)", color: "var(--digit-box-found-text)" }
+        : { background: "var(--digit-box-empty-bg)", border: "1.5px solid var(--digit-box-empty-border)", color: "var(--digit-box-empty-text)" }
       }>
       {digit}
     </div>
