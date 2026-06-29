@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { ThemeProvider, useTheme } from "next-themes";
+import { Sun, Moon } from "lucide-react";
 
 // Offline pages
 import Home        from "@/pages/Home";
@@ -90,14 +92,42 @@ function AppRoutes() {
   );
 }
 
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="fixed top-4 right-4 z-50 p-2.5 rounded-full glass transition-all shadow-md active:scale-95 cursor-pointer flex items-center justify-center hover:opacity-90"
+      aria-label="Toggle Theme"
+    >
+      {theme === "dark" ? (
+        <Sun className="w-5 h-5 text-yellow-500" />
+      ) : (
+        <Moon className="w-5 h-5 text-[#006B2C]" />
+      )}
+    </button>
+  );
+}
+
 export default function App() {
   const base = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
 
   return (
-    <WouterRouter base={base}>
-      <OnlineProvider>
-        <AppRoutes />
-      </OnlineProvider>
-    </WouterRouter>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <WouterRouter base={base}>
+        <OnlineProvider>
+          <AppRoutes />
+          <ThemeToggle />
+        </OnlineProvider>
+      </WouterRouter>
+    </ThemeProvider>
   );
 }

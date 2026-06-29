@@ -11,14 +11,14 @@ export default function Home() {
         <div className="text-center space-y-4">
           <div className="flex justify-center">
             <div className="w-20 h-20 rounded-2xl glass flex items-center justify-center text-5xl select-none"
-              style={{ boxShadow: "0 10px 30px rgba(2, 132, 199, 0.15), 0 4px 12px rgba(2, 132, 199, 0.08)" }}>
+              style={{ boxShadow: "0 10px 30px rgba(0, 107, 44, 0.15), 0 4px 12px rgba(0, 107, 44, 0.08)" }}>
               🎯
             </div>
           </div>
           <div>
             <h1 className="text-4xl font-black tracking-tight text-white"
-              style={{ textShadow: "0 2px 12px rgba(2, 132, 199, 0.15)" }}>
-              4 Digit Battle
+              style={{ textShadow: "0 2px 12px rgba(0, 107, 44, 0.15)" }}>
+              Digit Battle
             </h1>
             <p className="mt-2 text-sm text-white/50 leading-relaxed">
               Think of a secret 4-digit number.<br />
@@ -83,9 +83,9 @@ function ModeCard({ icon, title, subtitle, onClick, color }: {
   icon: string; title: string; subtitle: string; onClick: () => void; color: CardColor;
 }) {
   const styles: Record<CardColor, { bg: string; border: string; glow: string; text: string }> = {
-    p1:   { bg: "rgba(2, 132, 199, 0.04)",   border: "rgba(2, 132, 199, 0.2)",   glow: "rgba(2, 132, 199, 0.06)",   text: "#0284c7" },
-    p2:   { bg: "rgba(124, 58, 237, 0.04)",  border: "rgba(124, 58, 237, 0.2)",  glow: "rgba(124, 58, 237, 0.06)",  text: "#7c3aed" },
-    gold: { bg: "rgba(217, 119, 6, 0.04)",   border: "rgba(217, 119, 6, 0.2)",   glow: "rgba(217, 119, 6, 0.06)",   text: "#d97706" },
+    p1:   { bg: "var(--p1-dim)",    border: "var(--p1-border)",    glow: "var(--p1-glow)",    text: "var(--p1)" },
+    p2:   { bg: "var(--p2-dim)",    border: "var(--p2-border)",    glow: "var(--p2-glow)",    text: "var(--p2)" },
+    gold: { bg: "var(--gold-dim)",  border: "var(--gold-border)",  glow: "var(--gold-glow)",  text: "var(--gold)" },
   };
   const s = styles[color];
 
