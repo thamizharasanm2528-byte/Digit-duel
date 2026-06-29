@@ -11,13 +11,13 @@ export default function Home() {
         <div className="text-center space-y-4">
           <div className="flex justify-center">
             <div className="w-20 h-20 rounded-2xl glass flex items-center justify-center text-5xl select-none"
-              style={{ boxShadow: "0 0 30px rgba(6,214,240,0.25), 0 0 60px rgba(6,214,240,0.1)" }}>
+              style={{ boxShadow: "0 10px 30px rgba(2, 132, 199, 0.15), 0 4px 12px rgba(2, 132, 199, 0.08)" }}>
               🎯
             </div>
           </div>
           <div>
             <h1 className="text-4xl font-black tracking-tight text-white"
-              style={{ textShadow: "0 0 30px rgba(6,214,240,0.4)" }}>
+              style={{ textShadow: "0 2px 12px rgba(2, 132, 199, 0.15)" }}>
               4 Digit Battle
             </h1>
             <p className="mt-2 text-sm text-white/50 leading-relaxed">
@@ -83,9 +83,9 @@ function ModeCard({ icon, title, subtitle, onClick, color }: {
   icon: string; title: string; subtitle: string; onClick: () => void; color: CardColor;
 }) {
   const styles: Record<CardColor, { bg: string; border: string; glow: string; text: string }> = {
-    p1:   { bg: "rgba(6,214,240,0.06)",   border: "rgba(6,214,240,0.25)",   glow: "rgba(6,214,240,0.15)",   text: "#06d6f0" },
-    p2:   { bg: "rgba(168,85,247,0.06)",  border: "rgba(168,85,247,0.25)",  glow: "rgba(168,85,247,0.15)",  text: "#c084fc" },
-    gold: { bg: "rgba(251,191,36,0.06)",  border: "rgba(251,191,36,0.25)",  glow: "rgba(251,191,36,0.15)",  text: "#fcd34d" },
+    p1:   { bg: "rgba(2, 132, 199, 0.04)",   border: "rgba(2, 132, 199, 0.2)",   glow: "rgba(2, 132, 199, 0.06)",   text: "#0284c7" },
+    p2:   { bg: "rgba(124, 58, 237, 0.04)",  border: "rgba(124, 58, 237, 0.2)",  glow: "rgba(124, 58, 237, 0.06)",  text: "#7c3aed" },
+    gold: { bg: "rgba(217, 119, 6, 0.04)",   border: "rgba(217, 119, 6, 0.2)",   glow: "rgba(217, 119, 6, 0.06)",   text: "#d97706" },
   };
   const s = styles[color];
 
@@ -106,7 +106,7 @@ function ModeCard({ icon, title, subtitle, onClick, color }: {
       </div>
       <div className="flex-1">
         <p className="font-bold text-white text-sm">{title}</p>
-        <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{subtitle}</p>
+        <p className="text-xs mt-0.5" style={{ color: "rgba(15, 23, 42, 0.5)" }}>{subtitle}</p>
       </div>
       <span className="text-lg shrink-0" style={{ color: s.text }}>›</span>
     </button>

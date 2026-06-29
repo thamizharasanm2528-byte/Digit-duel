@@ -21,17 +21,17 @@ export default function CountdownRing({ seconds, total, size = 72 }: CountdownRi
   let urgent = false;
 
   if (progress > 0.5) {
-    trackColor = "#4ade80"; // green
-    glowColor = "rgba(74,222,128,0.5)";
-    textColor = "#4ade80";
+    trackColor = "#16a34a"; // green
+    glowColor = "rgba(22,163,74,0.2)";
+    textColor = "#16a34a";
   } else if (progress > 0.25) {
-    trackColor = "#fcd34d"; // yellow
-    glowColor = "rgba(252,211,77,0.5)";
-    textColor = "#fcd34d";
+    trackColor = "#d97706"; // amber
+    glowColor = "rgba(217,119,6,0.2)";
+    textColor = "#d97706";
   } else {
-    trackColor = "#f87171"; // red
-    glowColor = "rgba(248,113,113,0.5)";
-    textColor = "#f87171";
+    trackColor = "#dc2626"; // red
+    glowColor = "rgba(220,38,38,0.2)";
+    textColor = "#dc2626";
     urgent = seconds > 0;
   }
 
@@ -45,7 +45,7 @@ export default function CountdownRing({ seconds, total, size = 72 }: CountdownRi
         <circle
           cx={cx} cy={cy} r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="rgba(15,23,42,0.08)"
           strokeWidth={stroke}
         />
         {/* Countdown arc */}

@@ -41,7 +41,7 @@ export default function Lobby() {
 
         {state.error && (
           <div className="rounded-xl px-4 py-3 text-sm font-medium flex items-start gap-2"
-            style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#f87171" }}>
+            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
             <span className="shrink-0">⚠️</span>
             <span>{state.error}</span>
           </div>
@@ -79,7 +79,7 @@ export default function Lobby() {
             {/* Code length */}
             <div className="space-y-2">
               <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider">
-                Code length — <span className="text-[#06d6f0]">{codeLength} digits</span>
+                Code length — <span className="text-[#0284c7]">{codeLength} digits</span>
               </label>
               <div className="flex gap-1.5 flex-wrap">
                 {CODE_LENGTHS.map(n => (

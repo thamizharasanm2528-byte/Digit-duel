@@ -10,8 +10,8 @@ interface WinnerProps {
 }
 
 const W = {
-  1: { glow: "rgba(6,214,240,0.4)",   card: "p1-card", badge: "p1-badge" },
-  2: { glow: "rgba(192,132,252,0.4)", card: "p2-card", badge: "p2-badge" },
+  1: { glow: "rgba(2,132,199,0.2)",   card: "p1-card", badge: "p1-badge" },
+  2: { glow: "rgba(124,58,237,0.2)", card: "p2-card", badge: "p2-badge" },
 };
 
 export default function Winner({ winner, p1Secret, p2Secret, p1Name, p2Name, onRestart }: WinnerProps) {
@@ -30,7 +30,7 @@ export default function Winner({ winner, p1Secret, p2Secret, p1Name, p2Name, onR
 
         <div className="flex justify-center">
           <div className="w-28 h-28 rounded-3xl flex items-center justify-center text-6xl select-none glow-gold"
-            style={{ background: "rgba(255,215,0,0.08)", border: "1px solid rgba(255,215,0,0.25)" }}>
+            style={{ background: "rgba(217,119,6,0.05)", border: "1px solid rgba(217,119,6,0.2)" }}>
             🏆
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function Winner({ winner, p1Secret, p2Secret, p1Name, p2Name, onR
         <div className="space-y-2">
           <p className="text-xs text-white/40 uppercase tracking-widest font-semibold">Code Cracked!</p>
           <h1 className="text-5xl font-black tracking-tight text-white"
-            style={{ textShadow: `0 0 40px ${c.glow}` }}>
+            style={{ textShadow: `0 2px 12px ${c.glow}` }}>
             {winnerName} Wins!
           </h1>
           <p className="text-white/50 text-sm">
@@ -77,7 +77,7 @@ function SecretRow({ name, secret, isWinner, card, badge }: {
         <span className="text-sm text-white/70 font-medium">{name}</span>
         {isWinner && (
           <span className="text-xs px-2 py-0.5 rounded-full font-bold"
-            style={{ background: "rgba(255,215,0,0.15)", color: "#fcd34d", border: "1px solid rgba(255,215,0,0.3)" }}>
+            style={{ background: "rgba(217,119,6,0.1)", color: "#d97706", border: "1px solid rgba(217,119,6,0.2)" }}>
             👑 Winner
           </span>
         )}

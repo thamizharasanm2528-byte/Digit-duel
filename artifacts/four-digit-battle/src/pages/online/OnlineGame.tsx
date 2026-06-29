@@ -9,8 +9,8 @@ import { playTick, playBuzzer, playWin } from "@/lib/sounds";
 const TURN_SECONDS = 60;
 
 const P_STYLES = {
-  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "#06d6f0" },
-  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "#c084fc" },
+  1: { card: "p1-card", badge: "p1-badge", btn: "btn-neon",    hex: "#0284c7" },
+  2: { card: "p2-card", badge: "p2-badge", btn: "btn-neon-p2", hex: "#7c3aed" },
 };
 
 function getCrackedPositions(history: OnlineGuessEntry[], playerNum: 1 | 2): (string | null)[] {
@@ -109,7 +109,7 @@ export default function OnlineGame() {
 
         {skipping && (
           <div className="rounded-xl px-4 py-3 text-center font-bold text-sm"
-            style={{ background: "rgba(248,113,113,0.15)", border: "1px solid rgba(248,113,113,0.35)", color: "#f87171" }}>
+            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
             ⏰ Time's up! Passing turn…
           </div>
         )}
@@ -171,9 +171,9 @@ function CrackedProgress({ crackedPositions, player, codeLength }: {
   codeLength: number;
 }) {
   const hasAny = crackedPositions.some(p => p !== null);
-  const neon   = player === 1 ? "#06d6f0" : "#c084fc";
-  const glow   = player === 1 ? "rgba(6,214,240,0.4)"  : "rgba(192,132,252,0.4)";
-  const dim    = player === 1 ? "rgba(6,214,240,0.12)" : "rgba(192,132,252,0.12)";
+  const neon   = player === 1 ? "#0284c7" : "#7c3aed";
+  const glow   = player === 1 ? "rgba(2,132,199,0.25)"  : "rgba(124,58,237,0.25)";
+  const dim    = player === 1 ? "rgba(2,132,199,0.06)" : "rgba(124,58,237,0.06)";
   const boxSz  = codeLength <= 6 ? "w-11 h-11 text-lg" : codeLength <= 8 ? "w-9 h-9 text-base" : "w-7 h-7 text-sm";
 
   return (
@@ -190,9 +190,9 @@ function CrackedProgress({ crackedPositions, player, codeLength }: {
               style={digit ? {
                 background: dim, border: `2px solid ${neon}`, color: neon, boxShadow: `0 0 12px ${glow}`,
               } : {
-                background: "rgba(255,255,255,0.03)",
-                border: "2px solid rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.15)",
+                background: "rgba(15,23,42,0.03)",
+                border: "2px solid rgba(15,23,42,0.06)",
+                color: "rgba(15,23,42,0.25)",
               }}>
               {digit ?? "·"}
             </div>
@@ -206,7 +206,7 @@ function CrackedProgress({ crackedPositions, player, codeLength }: {
 function HistoryCol({ label, history, isMe }: { label: string; history: OnlineGuessEntry[]; isMe: boolean }) {
   return (
     <div className="space-y-2">
-      <p className={`text-xs font-bold uppercase tracking-wider px-1 truncate max-w-full ${isMe ? "text-[#06d6f0]" : "text-[#c084fc]"}`}>
+      <p className={`text-xs font-bold uppercase tracking-wider px-1 truncate max-w-full ${isMe ? "text-[#0284c7]" : "text-[#7c3aed]"}`}>
         {label}{isMe && " (You)"}
       </p>
       {history.length === 0 ? (
@@ -238,8 +238,8 @@ function DigitColorBox({ digit, color }: { digit: string; color: DigitColor }) {
   return (
     <div className="w-6 h-6 rounded-md flex items-center justify-center font-mono text-xs font-black transition-all"
       style={found
-        ? { background: "rgba(34,197,94,0.18)", border: "1.5px solid rgba(34,197,94,0.6)", color: "#4ade80", boxShadow: "0 0 6px rgba(34,197,94,0.4)" }
-        : { background: "rgba(255,255,255,0.04)", border: "1.5px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.4)" }
+        ? { background: "rgba(22,163,74,0.12)", border: "1.5px solid rgba(22,163,74,0.4)", color: "#16a34a" }
+        : { background: "rgba(15,23,42,0.03)", border: "1.5px solid rgba(15,23,42,0.08)", color: "rgba(15,23,42,0.5)" }
       }>
       {digit}
     </div>

@@ -93,11 +93,11 @@ export default function LocalHotspot() {
               {/* App URL (what friend should open) */}
               <div className="glass rounded-xl p-4 space-y-2">
                 <p className="text-xs text-white/40 uppercase tracking-wider">Share this link</p>
-                <div className="font-mono text-sm text-[#06d6f0] break-all">{appURL}</div>
+                <div className="font-mono text-sm text-[#0284c7] break-all">{appURL}</div>
                 <button
                   onClick={() => handleCopyURL(appURL)}
                   className="text-xs font-semibold transition-colors"
-                  style={{ color: copied === appURL ? "#4ade80" : "#06d6f0" }}
+                  style={{ color: copied === appURL ? "#16a34a" : "#0284c7" }}
                 >
                   {copied === appURL ? "✓ Copied!" : "📋 Copy link"}
                 </button>
@@ -113,12 +113,12 @@ export default function LocalHotspot() {
                       <div key={address} className="glass rounded-xl p-3 flex items-center justify-between gap-3">
                         <div>
                           <p className="text-xs text-white/40">{name}</p>
-                          <p className="font-mono text-sm text-[#fcd34d]">{url}</p>
+                          <p className="font-mono text-sm text-[#d97706]">{url}</p>
                         </div>
                         <button
                           onClick={() => handleCopyURL(url)}
                           className="text-xs font-semibold shrink-0"
-                          style={{ color: copied === url ? "#4ade80" : "#06d6f0" }}
+                          style={{ color: copied === url ? "#16a34a" : "#0284c7" }}
                         >
                           {copied === url ? "✓" : "Copy"}
                         </button>
@@ -181,7 +181,7 @@ function Step({ n, text }: { n: number; text: string }) {
   return (
     <div className="flex gap-3">
       <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-black shrink-0 mt-0.5"
-        style={{ background: "rgba(6,214,240,0.15)", color: "#06d6f0", border: "1px solid rgba(6,214,240,0.3)" }}>
+        style={{ background: "rgba(2,132,199,0.06)", color: "#0284c7", border: "1px solid rgba(2,132,199,0.25)" }}>
         {n}
       </span>
       <span>{text}</span>

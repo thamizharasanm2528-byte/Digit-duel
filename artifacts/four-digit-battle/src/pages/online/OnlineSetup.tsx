@@ -49,7 +49,7 @@ export default function OnlineSetup() {
 
         {state.error && (
           <div className="rounded-xl px-4 py-3 text-sm font-medium"
-            style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", color: "#f87171" }}>
+            style={{ background: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.2)", color: "#dc2626" }}>
             {state.error}
           </div>
         )}
@@ -107,7 +107,7 @@ export default function OnlineSetup() {
             {!oppSubmitted ? (
               <p className="text-white/40 text-sm animate-pulse">Waiting for {oppName} to set their number…</p>
             ) : (
-              <p className="text-sm font-semibold" style={{ color: "#4ade80" }}>Both ready — starting!</p>
+              <p className="text-sm font-semibold" style={{ color: "#16a34a" }}>Both ready — starting!</p>
             )}
           </div>
         )}
@@ -120,7 +120,7 @@ function ReadyChip({ label, ready, isMe }: { label: string; ready: boolean; isMe
   return (
     <div className={`flex-1 rounded-xl px-3 py-2 flex items-center justify-between ${isMe ? "glass-bright" : "glass"}`}>
       <span className="text-xs text-white/60 font-medium truncate">{label}</span>
-      <span className={`text-xs font-bold ml-2 shrink-0 ${ready ? "text-green-400" : "text-white/30"}`}>
+      <span className={`text-xs font-bold ml-2 shrink-0 ${ready ? "text-green-600" : "text-slate-400"}`}>
         {ready ? "✓" : "…"}
       </span>
     </div>

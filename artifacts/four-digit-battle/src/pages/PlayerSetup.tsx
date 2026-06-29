@@ -54,7 +54,7 @@ export default function PlayerSetup({ onStart }: PlayerSetupProps) {
         {step === 0 && (
           <div className="glass-bright rounded-2xl p-4 space-y-3">
             <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider">
-              Code length — <span className="text-[#06d6f0] font-black">{codeLength} digits</span>
+              Code length — <span className="text-[#0284c7] font-black">{codeLength} digits</span>
             </label>
             <div className="flex gap-1.5">
               {CODE_LENGTHS.map(n => (
