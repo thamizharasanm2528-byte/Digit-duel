@@ -89,6 +89,7 @@
   --digit-box-empty-bg: rgba(19, 30, 25, 0.03);
   --digit-box-empty-border: rgba(19, 30, 25, 0.08);
   --digit-box-empty-text: rgba(19, 30, 25, 0.5);
+  --digit-box-filled-bg: rgba(255, 255, 255, 0.95);
 }
 
 .dark {
@@ -143,6 +144,7 @@
   --digit-box-empty-bg: rgba(236, 253, 245, 0.04);
   --digit-box-empty-border: rgba(236, 253, 245, 0.1);
   --digit-box-empty-text: rgba(236, 253, 245, 0.5);
+  --digit-box-filled-bg: rgba(24, 38, 32, 0.95);
 }
 
 /* ── Global body — gradient background ───────────────────────────────────── */

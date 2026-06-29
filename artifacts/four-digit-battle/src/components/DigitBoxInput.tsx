@@ -31,9 +31,10 @@ export default function DigitBoxInput({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoFocus, disabled, codeLength]);
 
-  const neonColor   = player === 1 ? "#0284c7" : "#7c3aed";
-  const crackColor  = player === 1 ? "rgba(2, 132, 199, 0.06)"  : "rgba(124, 58, 237, 0.06)";
-  const crackBorder = player === 1 ? "rgba(2, 132, 199, 0.25)"  : "rgba(124, 58, 237, 0.25)";
+  const neonColor   = player === 1 ? "var(--p1)" : "var(--p2)";
+  const crackColor  = player === 1 ? "var(--p1-dim)"  : "var(--p2-dim)";
+  const crackBorder = player === 1 ? "var(--p1-border)"  : "var(--p2-border)";
+  const glowShadow  = player === 1 ? "var(--p1-glow)" : "var(--p2-glow)";
 
   function handleChange(i: number, raw: string) {
     const digit = raw.replace(/\D/g, "").slice(-1);
@@ -89,14 +90,14 @@ export default function DigitBoxInput({
                 background: isCracked && !digit
                   ? crackColor
                   : digit
-                  ? "rgba(255,255,255,0.9)"
-                  : "rgba(15, 23, 42, 0.03)",
+                  ? "var(--digit-box-filled-bg)"
+                  : "var(--digit-box-empty-bg)",
                 border: `2px solid ${
-                  isCracked && !digit ? crackBorder : digit ? neonColor : "rgba(15, 23, 42, 0.08)"
+                  isCracked && !digit ? crackBorder : digit ? neonColor : "var(--digit-box-empty-border)"
                 }`,
                 color: "hsl(var(--foreground))",
                 boxShadow: digit
-                  ? `0 4px 10px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255,255,255,0.8)`
+                  ? `0 4px 12px ${glowShadow}`
                   : isCracked
                   ? `0 2px 6px ${crackBorder}`
                   : "none",
