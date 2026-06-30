@@ -1,4 +1,4 @@
-// Game logic for Digit Battle (Bulls and Cows)
+// Game logic for DigiDuel (Bulls and Cows)
 
 // Only two states: digit is in the RIGHT position, or it's not useful
 export type DigitColor = "found" | "none";

@@ -1,4 +1,4 @@
-// Socket.IO event handlers for 4 Digit Battle online multiplayer
+// Socket.IO event handlers for DigiDuel online multiplayer
 import { Server, type Socket } from "socket.io";
 import type { Server as HttpServer } from "node:http";
 import { logger } from "../lib/logger";

@@ -18,7 +18,7 @@ export default function Home() {
           <div>
             <h1 className="text-4xl font-black tracking-tight text-white"
               style={{ textShadow: "0 2px 12px rgba(0, 107, 44, 0.15)" }}>
-              Digit Battle
+              DigiDuel
             </h1>
             <p className="mt-2 text-sm text-white/50 leading-relaxed">
               Think of a secret 4-digit number.<br />

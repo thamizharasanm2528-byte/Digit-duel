@@ -1,4 +1,4 @@
-# 4 Digit Battle
+# DigiDuel
 
 A real-time multiplayer number guessing game (Bulls & Cows) built with React + Vite + Socket.IO.
 
